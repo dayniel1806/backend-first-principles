@@ -11,6 +11,12 @@ router.get("/users/:id", (req, res) => {
     res.end(JSON.stringify({id:req.params.id, query:req.query})); 
 });
 
+
+router.get("/users/:id/posts/:postId", (req, res) => {
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({ params: req.params, query: req.query }));
+});
+
 router.post("/users", (req,res) => {
     res.writeHead(201);
     res.end();
